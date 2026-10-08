@@ -1,16 +1,26 @@
+alunos = {}
 
+while len(alunos) < 5:
+    nome = input("Digite o nome: ")
 
-codigos = []
+    if nome in alunos:
+        print("Esse aluno já foi cadastrado. Digite outro nome.")
+        continue
 
-quantidade = int(input("Digite a quantidade de códigos a serem cadastrados: "))
+    nota = float(input("Digite a nota: "))
+    alunos[nome] = nota
 
-for i in range(quantidade):
-    codigo = int(input(f"Digite o código do produto {i + 1}: "))
-    codigos.append(codigo)
+soma = 0
 
-codigo_buscado = int(input("\nDigite o código que deseja verificar: "))
+for nome in alunos:
+    soma = soma + alunos[nome]
 
-if codigo_buscado in codigos:
-    print(f"O código {codigo_buscado} está presente na lista de produtos.")
-else:
-    print(f"O código {codigo_buscado} NÃO está presente na lista de produtos.")
+media = soma / len(alunos)
+
+print("Media da turma:", media)
+
+print("Alunos aprovados:")
+
+for nome in alunos:
+    if alunos[nome] >= 7:
+        print(nome, alunos[nome])

@@ -1,9 +1,13 @@
 alunos = {}
 
-for i in range(5):
+while len(alunos) < 5:
     nome = input("Digite o nome: ")
-    nota = float(input("Digite a nota: "))
 
+    if nome in alunos:
+        print("Esse aluno já foi cadastrado. Digite outro nome.")
+        continue
+
+    nota = float(input("Digite a nota: "))
     alunos[nome] = nota
 
 soma = 0
@@ -11,7 +15,7 @@ soma = 0
 for nome in alunos:
     soma = soma + alunos[nome]
 
-media = soma / 5
+media = soma / len(alunos)
 
 print("Media da turma:", media)
 

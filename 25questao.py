@@ -1,6 +1,3 @@
-
-
-
 produtos = []
 
 quantidade = int(input("Digite a quantidade de produtos a serem cadastrados: "))

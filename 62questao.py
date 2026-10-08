@@ -1,4 +1,7 @@
 def e_perfeito(numero):
+    if numero <= 0:
+        return False
+
     soma = 0
 
     for divisor in range(1, numero):
